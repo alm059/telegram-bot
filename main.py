@@ -1,5 +1,11 @@
 from configparser import ConfigParser
-import requests
+import requests, sys
+
+# Min python version = 3
+if sys.version_info.major < 3:
+    print("At least Python 3 required")
+    sys.exit()
+
 
 data = ConfigParser(comment_prefixes='/', allow_no_value=True)
 data.read('data.ini')
